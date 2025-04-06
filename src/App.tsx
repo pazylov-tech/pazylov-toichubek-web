@@ -1,16 +1,23 @@
-// import { useState } from 'react'
-import './App.css'
+import { useEffect } from 'react';
+import './App.css';
+import Navbar from './components/Navbar';
+import Hero from './sections/Hero';
+import About from './sections/About';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
-  // const [count, setCount] = useState(0)
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <>
-      <div>
-      </div>
-
+      <Navbar />
+      <Hero />
+      <About />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
