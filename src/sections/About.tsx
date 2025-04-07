@@ -44,27 +44,27 @@ const About = () => {
             </p>
 
             {/* Buttons */}
-            <div className="flex gap-4 mb-10" data-aos="fade-up">
+            <div className="flex gap-9 mb-10" data-aos="fade-up">
               <a
                 href="/cv.pdf"
                 download
-                className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 shadow-md">
+                className="bg-red-500 hover:bg-red-600 text-white text-2xl px-4 py-3 rounded-lg flex items-center gap-2 shadow-md">
                 Download CV <FaDownload />
               </a>
               <a
                 // href="#projects"
-                className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 shadow-md">
+                className="bg-gray-700 hover:bg-gray-600 text-white text-2xl px-4 py-3 rounded-lg flex items-center gap-3 shadow-md">
                 View Projects &lt;/&gt;
               </a>
             </div>
           </div>
 
           {/* Right: Profile Image */}
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-12">
             <img
               src="/profile.png"
               alt="Toichubek"
-              className="w-77 h-77 object-cover rounded-full border-4 border-gray-600 shadow-lg"
+              className="w-80 h-80 object-cover rounded-full border-2 border-gray-600 shadow-lg"
             />
           </div>
         </div>

@@ -22,7 +22,7 @@ const Navbar = () => {
           </h1>
         </div>
 
-        <ul className="flex gap-7 text-lg">
+        <ul className="flex gap-9 text-lg">
           <li className="hover:text-blue-400 cursor-pointer">Home</li>
           <li className="hover:text-blue-400 cursor-pointer">About</li>
           <li className="hover:text-blue-400 cursor-pointer">Portfolio</li>

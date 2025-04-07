@@ -28,18 +28,18 @@ const Hero = () => {
           </p>
 
           {/* Tech Stack Badges */}
-          <div className="flex gap-3 mt-9">
-            <span className="bg-gray-700 px-3 py-1 rounded-lg text-sm">
-              C, C#, C++
+          <div className="flex gap-4 mt-7">
+            <span className="bg-gray-700 px-3 py-1 rounded-lg text-sm hover:bg-amber-800">
+              C, C#
             </span>
-            <span className="bg-gray-700 px-3 py-1 rounded-lg text-sm">
-              Java
+            <span className="bg-gray-700 px-3 py-1 rounded-lg text-sm hover:bg-amber-800">
+              Java, C++
             </span>
-            <span className="bg-gray-700 px-3 py-1 rounded-lg text-sm">
-              JS, React
+            <span className="bg-gray-700 px-3 py-1 rounded-lg text-sm hover:bg-amber-800">
+              JS, TS
             </span>
-            <span className="bg-gray-700 px-3 py-1 rounded-lg text-sm">
-              Python
+            <span className="bg-gray-700 px-3 py-1 rounded-lg text-sm hover:bg-amber-800">
+              Python, React
             </span>
           </div>
 
@@ -53,7 +53,7 @@ const Hero = () => {
           </div>
 
           {/* Social Icons */}
-          <div className="flex gap-10 mt-9 text-4xl">
+          <div className="flex ml-10 gap-10 mt-10 text-4xl">
             <a
               href="https://github.com/pazylov-tech"
               target="_blank"
@@ -85,8 +85,13 @@ const Hero = () => {
         </div>
 
         {/* Hero Animation */}
-        <div className="hidden md:flex justify-center">
-          <Lottie animationData={Animation} className="w-155" loop autoplay />
+        <div className="hidden md:flex justify-center mb-17">
+          <Lottie
+            animationData={Animation}
+            className="w-200 h-200"
+            loop
+            autoplay
+          />
         </div>
       </div>
     </section>

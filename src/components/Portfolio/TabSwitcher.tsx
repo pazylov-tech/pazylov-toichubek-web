@@ -17,11 +17,14 @@ const TabSwitcher: React.FC<TabSwitcherProps> = ({
   ] as const;
 
   const tabButtonStyle = (isActive: boolean) =>
-    `flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition duration-200
-     ${isActive ? 'bg-blue-600 text-white' : 'bg-[#112240] text-blue-200 hover:bg-[#1a2c50]'}`;
+    `w-75 flex items-center justify-center gap-3 px-4 py-12 rounded-lg text-3xl font-height transition duration-200
+     ${isActive ? 'bg-blue-800 text-white' : 'bg-[#112240] text-blue-200 hover:bg-[#1a2c50]'}`;
 
   return (
-    <div className="flex justify-center gap-4 mb-10 flex-wrap">
+    <div
+      className="flex justify-center gap-20 mb-19 flex-wrap"
+      data-aos="zoom-out"
+      data-aos-delay="90">
       {tabs.map((tab) => (
         <button
           key={tab.key}
