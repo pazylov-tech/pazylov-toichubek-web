@@ -1,7 +1,9 @@
 import React from 'react';
+import { TabType } from './types';
+import TechStack from './TechStack';
 
 interface GridContentProps {
-  type: 'projects' | 'tech' | 'education';
+  type: TabType;
 }
 
 const dummyData = {
@@ -13,11 +15,14 @@ const dummyData = {
     'Project 5',
     'Project 6',
   ],
-  tech: ['React', 'Tailwind', 'TypeScript', 'C++', 'Java', 'JavaScript'],
   education: ['Card 1', 'Card 2', 'Card 3', 'Card 4', 'Card 5', 'Card 6'],
 };
 
 const GridContent: React.FC<GridContentProps> = ({ type }) => {
+  if (type === 'tech') {
+    return <TechStack />;
+  }
+
   return (
     <>
       {dummyData[type].map((item, index) => (

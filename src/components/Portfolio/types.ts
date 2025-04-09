@@ -1,1 +1,1 @@
-export type TabType = 'projects' | 'stack' | 'education';
+export type TabType = 'projects' | 'tech' | 'education';
