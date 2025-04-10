@@ -1,6 +1,7 @@
 import React from 'react';
 import { TabType } from './types';
 import TechStack from './TechStack';
+import Education from './Education';
 
 interface GridContentProps {
   type: TabType;
@@ -15,12 +16,14 @@ const dummyData = {
     'Project 5',
     'Project 6',
   ],
-  education: ['Card 1', 'Card 2', 'Card 3', 'Card 4', 'Card 5', 'Card 6'],
 };
 
 const GridContent: React.FC<GridContentProps> = ({ type }) => {
   if (type === 'tech') {
     return <TechStack />;
+  }
+  if (type === 'education') {
+    return <Education />;
   }
 
   return (
