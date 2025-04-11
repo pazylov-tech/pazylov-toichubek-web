@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const educationItems = [
   {
-    name: 'American University of Central Asia',
+    name: 'AUCA',
     image: '/education-icons/auca.jpeg',
     description:
-      "Pursuing a Bachelor's double major degree in Software Engineering and in Liberal Arts and Science concentrating in Mathematical Modeling at AUCA.",
+      "Pursuing a Bachelor's degree in Software Engineering & Liberal Arts and Science concentrating in Mathematical Modeling at AUCA.",
   },
   {
     name: 'EPAM Systems',
-    image: '/education-icons/epam.jpeg',
+    image: '/education-icons/epam.png',
     description:
       'Intern at EPAM, working on Engineering Excel Bootcamp and Project Management School to strengthen full-stack skills.',
   },
@@ -21,12 +23,12 @@ const educationItems = [
   },
   {
     name: 'Stepik',
-    image: '/education-icons/stepik.jpeg',
+    image: '/education-icons/stepik.jpg',
     description:
       'Completed CS and problem-solving courses at Stepik to reinforce algorithmic thinking and backend basics.',
   },
   {
-    name: 'Codecademy',
+    name: 'Codeсademy',
     image: '/education-icons/codecademy.png',
     description:
       'Learned web development foundations and backend intro through interactive lessons.',
@@ -40,36 +42,41 @@ const educationItems = [
 ];
 
 const Education: React.FC = () => {
+  useEffect(() => {
+    Aos.init({ duration: 900 });
+  });
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-35 p-6">
+    <div
+      className="grid grid-cols-1 sm:grid-cols-3 gap-x-100 gap-y-15 p-4 ml-65"
+      data-aos="flip-up">
       {educationItems.map((item, index) => (
         <div
           key={index}
           onClick={() => setSelected(index)}
-          className="bg-white rounded-2xl p-5 shadow-md cursor-pointer hover:scale-105 transition duration-300 flex items-center h-50 w-50">
+          className="w-70 h-40 rounded-2xl shadow-md cursor-pointer hover:scale-105 transition duration-300 flex items-center justify-center">
           <img
             src={item.image}
             alt={item.name}
-            className="w-full h-30 object-contain"
+            className="rounded-2xl max-w-full max-h-full object-contain"
           />
         </div>
       ))}
 
       {/* Modal */}
       {selected !== null && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl p-6 max-w-md w-full relative">
+        <div className="fixed inset-0 bg-transparent bg-opacity-25 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-[#0a192f] bg-opacity-80 backdrop-blur-lg rounded-xl p-8 w-full mx-4 relative shadow-2xl">
             <button
               onClick={() => setSelected(null)}
-              className="absolute top-2 right-4 text-2xl font-bold text-gray-600 hover:text-black">
+              className="absolute top-2 right-4 text-2xl font-bold text-gray-400 hover:text-cyan-100">
               &times;
             </button>
-            <h2 className="text-2xl font-semibold mb-2">
+            <h2 className="text-2xl font-semibold mb-4 text-center text-cyan-500">
               {educationItems[selected].name}
             </h2>
-            <p className="text-gray-700">
+            <p className="text-gray-400 text-center">
               {educationItems[selected].description}
             </p>
           </div>

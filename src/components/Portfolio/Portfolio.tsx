@@ -13,7 +13,7 @@ const Portfolio = () => {
   const [activeTab, setActiveTab] = useState<TabType>('projects');
 
   return (
-    <section className="w-full  h-screen bg-gradient-to-b from-[#0a192f] to-[#0a020c] text-white">
+    <section className="w-full h-screen bg-gradient-to-b from-[#0a192f] to-[#0a020c] text-white mt-17">
       <div className="text-center mb-15" data-aos="fade-up">
         <h2 className="text-6xl font-bold text-white">Portfolio Showcase</h2>
         <p className="mt-5 text-cyan-600 max-w-xl mx-auto">

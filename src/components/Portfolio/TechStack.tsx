@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const techStack = [
   { name: 'JavaScript', icon: '/tech-icons/js.svg' },
@@ -14,8 +16,11 @@ const techStack = [
 ];
 
 const TechStack: React.FC = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  });
   return (
-    <div className="w-full flex justify-start">
+    <div className="w-full flex justify-start" data-aos="zoom-out">
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-10 gap-x-55 px-4 sm:px-70 py-10">
         {techStack.map((tech, idx) => (
           <div

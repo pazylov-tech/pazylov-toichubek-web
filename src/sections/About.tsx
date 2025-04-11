@@ -60,7 +60,7 @@ const About = () => {
           </div>
 
           {/* Right: Profile Image */}
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-12 ml-14">
             <img
               src="/profile.png"
               alt="Toichubek"
