@@ -8,15 +8,38 @@ const projectItems = [
     title: 'PAZYLOV',
     image: '/projects-icons/pazylov.png',
     description:
-      'My personal website and first pet project. Built with React, Vite, TailwindCSS, and deployed on Vercel. Focused on UI/UX and responsive layout.',
+      'My personal website and first pet project. Built with TypeScript, React, Vite and TailwindCSS.',
     liveDemoLink: 'https://toichubek.com',
     detailsLink: '#',
   },
   {
     title: 'SOLO',
     image: '/projects-icons/solo.png',
+    description: 'An anime-based concept app inspired by Solo Leveling.',
+    liveDemoLink: '#',
+    detailsLink: '#',
+  },
+  {
+    title: 'ReadMeet',
+    image: '/projects-icons/read-meet.png',
     description:
-      'Anime-based concept web app inspired by Solo Leveling. A practice of motion UI, component design, and themed UI in React.',
+      'A beautifully designed app that blends the love of reading with meaningful connection. ReadMeet brings stories — and people — together.',
+    liveDemoLink: '#',
+    detailsLink: '#',
+  },
+  {
+    title: 'AUCA Connect',
+    image: '/projects-icons/auca-connect.png',
+    description:
+      'An app for the university & And my possible senior thesis project.',
+    liveDemoLink: '#',
+    detailsLink: '#',
+  },
+  {
+    title: 'Convertly',
+    image: '/projects-icons/convertly.png',
+    description:
+      'An app bridging the gap between units with elegance and speed. Convertly is a sleek and intuitive web application designed to make unit conversions effortless.',
     liveDemoLink: '#',
     detailsLink: '#',
   },
@@ -28,23 +51,6 @@ const projectItems = [
     liveDemoLink: '#',
     detailsLink: '#',
   },
-  {
-    title: 'AUCA Connect',
-    image: '/projects-icons/auca-connect.png',
-    description:
-      'An app for my university. As well as my senior thesis project.',
-    liveDemoLink: '#',
-    detailsLink: '#',
-  },
-  {
-    title: 'Convertly',
-    image: '/projects-icons/convertly.png',
-    description:
-      'Convertly is a sleek and intuitive web application designed to make unit conversions effortless. Convertly bridges the gap between units with elegance and speed.',
-    liveDemoLink: '#',
-    detailsLink: '#',
-  },
-  // Add more if needed
 ];
 
 const Projects: React.FC = () => {
