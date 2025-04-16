@@ -24,7 +24,7 @@ const TabSwitcher: React.FC<TabSwitcherProps> = ({
 
   return (
     <div
-      className="flex justify-center w-full mb-15"
+      className="flex justify-center w-full mb-1"
       data-aos="zoom-out"
       data-aos-delay="90">
       <div className="flex gap-15 bg-[#112240] p-2 rounded-xl w-full max-w-6xl justify-center h-37">

@@ -21,7 +21,7 @@ const ProjectDetail = () => {
     <div className="max-w-4xl mx-auto px-6 py-10 text-white">
       <Link
         to="/"
-        className="text-cyan-300 flex items-center gap-2 mb-6 hover:underline">
+        className="text-cyan-300 flex items-center gap-2 mb-6 mt-15 hover:underline bg-[#112240] px-3 py-1 rounded-full w-fit">
         <ArrowLeft size={16} />
         Back to Projects
       </Link>
