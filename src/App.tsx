@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Portfolio from './components/Portfolio/Portfolio';
 import Contact from './sections/Contact/Contact';
+import ProjectDetails from './components/Portfolio/ProjectDetail';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -14,13 +16,23 @@ function App() {
   }, []);
 
   return (
-    <>
+    <Router>
       <Navbar />
-      <Hero />
-      <About />
-      <Portfolio />
-      <Contact />
-    </>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <About />
+              <Portfolio />
+              <Contact />
+            </>
+          }
+        />
+        <Route path="/projects/:slug" element={<ProjectDetails />} />
+      </Routes>
+    </Router>
   );
 }
 
