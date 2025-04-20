@@ -1,4 +1,4 @@
-import { projectItems } from './projectItems';
+import { projectsItems } from './projectsItems.ts';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <section className="text-white py-8" id="projects">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ml-90 gap-x-120 gap-y-5 place-items-center">
-        {projectItems.map((project, index) => (
+        {projectsItems.map((project, index) => (
           <div
             key={index}
             className="w-85 h-auto rounded-2xl shadow-md hover:scale-105 transition duration-300 overflow-hidden bg-[#112240] flex flex-col">

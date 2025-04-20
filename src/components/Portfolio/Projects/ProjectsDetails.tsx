@@ -1,10 +1,10 @@
 import { useParams, Link } from 'react-router-dom';
-import { projectItems } from './projectItems';
+import { projectsItems } from './projectsItems.ts';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 
-const ProjectDetail = () => {
+const ProjectsDetails = () => {
   const { slug } = useParams();
-  const project = projectItems.find((item) => item.slug === slug);
+  const project = projectsItems.find((item) => item.slug === slug);
 
   if (!project) {
     return (
@@ -45,4 +45,4 @@ const ProjectDetail = () => {
   );
 };
 
-export default ProjectDetail;
+export default ProjectsDetails;

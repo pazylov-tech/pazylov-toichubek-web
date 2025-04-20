@@ -6,7 +6,7 @@ import Hero from './sections/Hero';
 import About from './sections/About';
 import Portfolio from './components/Portfolio/Portfolio';
 import Contact from './sections/Contact/Contact';
-import ProjectDetails from './components/Portfolio/ProjectDetail';
+import ProjectDetails from './components/Portfolio/Projects/ProjectsDetails.tsx';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
