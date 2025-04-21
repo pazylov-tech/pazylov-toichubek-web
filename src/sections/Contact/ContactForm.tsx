@@ -10,7 +10,7 @@ const ContactForm: React.FC = () => {
   });
   return (
     <div
-      className="bg-[#2e3e5c] rounded-2xl p-8 w-full max-w-md shadow-lg text-white"
+      className="bg-[#2e3e5c] rounded-2xl p-8 w-full max-w-md shadow-lg text-white mt-4"
       data-aos="zoom-in">
       <div className="flex justify-between items-center mb-6">
         <div>

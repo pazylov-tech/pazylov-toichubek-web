@@ -66,8 +66,8 @@ const Education: React.FC = () => {
 
       {/* Modal */}
       {selected !== null && (
-        <div className="fixed inset-0 bg-transparent bg-opacity-25 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="bg-[#0a192f] bg-opacity-80 backdrop-blur-lg rounded-xl p-8 w-full mx-4 relative shadow-2xl">
+        <div className="w-full fixed inset-0 bg-transparent bg-opacity-25 backdrop-blur-sm flex items-center justify-center z-50 ml-105">
+          <div className="bg-[#0a192f] bg-opacity-80 backdrop-blur-lg rounded-2xl p-15 mx-2 relative shadow-2xl">
             <button
               onClick={() => setSelected(null)}
               className="absolute top-2 right-4 text-2xl font-bold text-gray-400 hover:text-cyan-100">

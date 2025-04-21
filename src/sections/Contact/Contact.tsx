@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16" data-aos="zoom-up">
           <h2 className="text-6xl font-bold">Contact Me</h2>
-          <p className="text-sky-300 text-xl mt-2">
+          <p className="text-sky-300 text-xl mt-3">
             Leave me a message in case of having questions, and I’ll get back to
             you soon.
           </p>

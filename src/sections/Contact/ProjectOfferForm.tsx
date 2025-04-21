@@ -9,7 +9,7 @@ const ProjectOfferForm: React.FC = () => {
   });
   return (
     <div
-      className="bg-[#2e3e5c] rounded-2xl p-8 w-full max-w-xl shadow-lg text-white"
+      className="bg-[#2e3e5c] rounded-2xl p-8 w-full max-w-xl shadow-lg text-white mt-4"
       data-aos="zoom-in">
       <div className="mb-2">
         <h2 className="text-3xl font-bold flex items-center gap-2">
@@ -29,7 +29,7 @@ const ProjectOfferForm: React.FC = () => {
           type="text"
           placeholder="Enter your name"
           required
-          className="w-full pl-4 pr-4 py-2 bg-[#465774] rounded-xl text-white placeholder-white placeholder-opacity-60 focus:outline-none focus:ring-2 focus:ring-sky-400"
+          className="w-full pl-4 pr-4 py-3 bg-[#465774] rounded-xl text-white placeholder-white placeholder-opacity-60 focus:outline-none focus:ring-2 focus:ring-sky-400"
         />
 
         <h2 className="text-2xl font-bold ml-4 flex items-center">
@@ -39,7 +39,7 @@ const ProjectOfferForm: React.FC = () => {
           placeholder="Write your offer and a short project description…"
           rows={5}
           required
-          className="w-full pl-4 pr-4 py-2 bg-[#465774] rounded-xl text-white placeholder-white placeholder-opacity-60 resize-none focus:outline-none focus:ring-2 focus:ring-sky-400"
+          className="w-full pl-4 pr-4 py-3 bg-[#465774] rounded-xl text-white placeholder-white placeholder-opacity-60 resize-none focus:outline-none focus:ring-2 focus:ring-sky-400"
         />
 
         <div>
