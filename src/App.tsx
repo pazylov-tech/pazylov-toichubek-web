@@ -7,6 +7,7 @@ import About from './sections/About';
 import Portfolio from './components/Portfolio/Portfolio';
 import Contact from './sections/Contact/Contact';
 import ProjectDetails from './components/Portfolio/Projects/ProjectsDetails.tsx';
+import Footer from './components/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -27,6 +28,7 @@ function App() {
               <About />
               <Portfolio />
               <Contact />
+              <Footer />
             </>
           }
         />
