@@ -65,7 +65,7 @@ const ContactForm: React.FC = () => {
       {/* Social Links */}
       <div className="space-y-3 mt-6">
         <a
-          href="https://linkedin.com/in/yourprofile"
+          href="https://www.linkedin.com/in/toichubek-pazylov/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 bg-[#465774] hover:bg-blue-700 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 w-full">

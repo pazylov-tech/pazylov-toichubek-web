@@ -78,7 +78,7 @@ const About = () => {
             data-aos-delay="100">
             <div className="flex items-center justify-between text-white text-3xl mb-3">
               <FaProjectDiagram className="text-blue-400" />
-              <p className="font-bold">7</p>
+              <p className="font-bold">5</p>
             </div>
             <h4 className="text-xl font-semibold">TOTAL PROJECTS</h4>
             <p className="text-gray-400 text-sm mb-2">Variety of projects</p>

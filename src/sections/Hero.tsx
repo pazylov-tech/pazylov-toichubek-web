@@ -69,7 +69,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/toichubek-pazylov-2ab426262/"
+              href="www.linkedin.com/in/toichubek-pazylov"
               target="_blank"
               rel="noopener noreferrer">
               <FaLinkedin className="cursor-pointer hover:text-gray-400" />

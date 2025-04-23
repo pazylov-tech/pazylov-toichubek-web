@@ -7,9 +7,10 @@ const Projects = () => {
     <section className="text-white py-8" id="projects">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ml-90 gap-x-120 gap-y-5 place-items-center">
         {projectsItems.map((project, index) => (
-          <div
+          <Link
+            to={`/projects/${project.slug}`}
             key={index}
-            className="w-85 h-auto rounded-2xl shadow-md hover:scale-105 transition duration-300 overflow-hidden bg-[#112240] flex flex-col">
+            className="w-85 h-auto rounded-2xl shadow-md hover:scale-105 transition duration-300 overflow-hidden bg-[#112240] flex flex-col no-underline">
             <img
               src={project.image}
               alt={project.title}
@@ -28,18 +29,18 @@ const Projects = () => {
                     href={project.liveDemoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-cyan-300 hover:text-cyan-100">
+                    className="flex items-center gap-1 text-cyan-300 hover:text-cyan-100 z-10"
+                    onClick={(e) => e.stopPropagation()}
+                    onMouseDown={(e) => e.stopPropagation()}>
                     Live Demo <ExternalLink size={14} />
                   </a>
                 )}
-                <Link
-                  to={`/projects/${project.slug}`}
-                  className="flex items-center gap-1 border border-pink-300 text-pink-300 hover:bg-pink-300 hover:text-[#112240] px-3 py-1 rounded-full transition duration-200">
+                <span className="flex items-center gap-1 border border-pink-300 text-pink-300 hover:bg-pink-300 hover:text-[#112240] px-3 py-1 rounded-full transition duration-200">
                   Details <ArrowRight size={14} />
-                </Link>
+                </span>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

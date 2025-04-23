@@ -1,10 +1,25 @@
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projectsItems } from './projectsItems.ts';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const ProjectsDetails = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const project = projectsItems.find((item) => item.slug === slug);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const goToProjects = () => {
+    navigate('/');
+    setTimeout(() => {
+      const section = document.getElementById('projects');
+      section?.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  };
 
   if (!project) {
     return (
@@ -19,12 +34,12 @@ const ProjectsDetails = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10 text-white">
-      <Link
-        to="/"
-        className="text-cyan-300 flex items-center gap-2 mb-6 mt-15 hover:underline bg-[#112240] px-3 py-1 rounded-full w-fit">
+      <button
+        onClick={goToProjects}
+        className="text-cyan-300 flex items-center gap-2 mb-4 mt-20 hover:underline bg-[#112240] px-3 py-1 rounded-full w-fit">
         <ArrowLeft size={16} />
         Back to Projects
-      </Link>
+      </button>
       <img
         src={project.image}
         alt={project.title}

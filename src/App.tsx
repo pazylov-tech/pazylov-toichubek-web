@@ -28,12 +28,12 @@ function App() {
               <About />
               <Portfolio />
               <Contact />
-              <Footer />
             </>
           }
         />
         <Route path="/projects/:slug" element={<ProjectDetails />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
