@@ -1,10 +1,16 @@
 import { projectsItems } from './projectsItems.ts';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Projects = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  });
   return (
-    <section className="text-white py-8" id="projects">
+    <section className="text-white py-8" id="projects" data-aos="fade-up">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ml-90 gap-x-120 gap-y-5 place-items-center">
         {projectsItems.map((project, index) => (
           <Link

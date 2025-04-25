@@ -3,8 +3,13 @@ import { useParams, Link } from 'react-router-dom';
 import { projectsItems } from './projectsItems.ts';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const ProjectsDetails = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  });
   const { slug } = useParams();
   const navigate = useNavigate();
   const project = projectsItems.find((item) => item.slug === slug);
@@ -33,7 +38,7 @@ const ProjectsDetails = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-10 text-white">
+    <div className="max-w-4xl mx-auto px-6 py-10 text-white" data-aos="fade-up">
       <button
         onClick={goToProjects}
         className="text-cyan-300 flex items-center gap-2 mb-4 mt-20 hover:underline bg-[#112240] px-3 py-1 rounded-full w-fit">

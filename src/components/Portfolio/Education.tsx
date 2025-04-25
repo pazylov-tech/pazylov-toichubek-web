@@ -49,7 +49,7 @@ const Education: React.FC = () => {
 
   return (
     <div
-      className="grid grid-cols-1 sm:grid-cols-3 gap-x-100 gap-y-15 p-4 ml-65"
+      className="grid grid-cols-1 sm:grid-cols-3 gap-x-100 gap-y-15 p-4 ml-65 mt-12"
       data-aos="flip-up">
       {educationItems.map((item, index) => (
         <div

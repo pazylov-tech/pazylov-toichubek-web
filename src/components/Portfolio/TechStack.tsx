@@ -20,7 +20,7 @@ const TechStack: React.FC = () => {
     Aos.init({ duration: 1000 });
   });
   return (
-    <div className="w-full flex justify-start" data-aos="zoom-out">
+    <div className="w-full flex justify-start mt-12" data-aos="zoom-out">
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-10 gap-x-55 px-4 sm:px-70 py-10">
         {techStack.map((tech, idx) => (
           <div
