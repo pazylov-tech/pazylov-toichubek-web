@@ -1,3 +1,4 @@
+import { Link, scrollSpy } from 'react-scroll';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
@@ -5,7 +6,9 @@ import { useEffect } from 'react';
 const Navbar = () => {
   useEffect(() => {
     Aos.init({ duration: 1000 });
-  });
+    scrollSpy.update();
+  }, []);
+
   return (
     <nav
       className="w-full fixed top-0 z-50 bg-[#0a192f] border-b border-gray-700 text-white shadow-sm"
@@ -15,7 +18,7 @@ const Navbar = () => {
           <img
             src="/logo.png"
             alt="logo"
-            className="h-10 w-10 hover:text-blue-300 cursor-pointer"
+            className="h-10 w-10 hover:scale-110 transition-transform duration-300 cursor-pointer"
           />
           <h1 className="text-2xl font-bold hover:text-blue-400 cursor-pointer">
             PAZYLOV
@@ -23,10 +26,50 @@ const Navbar = () => {
         </div>
 
         <ul className="flex gap-9 text-lg">
-          <li className="hover:text-blue-400 cursor-pointer">Home</li>
-          <li className="hover:text-blue-400 cursor-pointer">About</li>
-          <li className="hover:text-blue-400 cursor-pointer">Portfolio</li>
-          <li className="hover:text-blue-400 cursor-pointer">Contact</li>
+          <li className="hover:text-blue-400 cursor-pointer">
+            <Link
+              to="home"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              activeClass="active">
+              Home
+            </Link>
+          </li>
+          <li className="hover:text-blue-400 cursor-pointer">
+            <Link
+              to="about"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              activeClass="active">
+              About
+            </Link>
+          </li>
+          <li className="hover:text-blue-400 cursor-pointer">
+            <Link
+              to="portfolio"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              activeClass="active">
+              Portfolio
+            </Link>
+          </li>
+          <li className="hover:text-blue-400 cursor-pointer">
+            <Link
+              to="contact"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              activeClass="active">
+              Contact
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

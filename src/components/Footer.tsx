@@ -16,9 +16,11 @@ export default function Footer() {
             <img
               src="/logo.png"
               alt="logo"
-              className="h-10 w-10 hover:text-blue-300 cursor-pointer"
+              className="h-10 w-10 hover:scale-110 transition-transform duration-300 cursor-pointer"
             />
-            <h3 className="text-xl font-semibold text-cyan-400">PAZYLOV</h3>
+            <h3 className="text-xl font-semibold text-cyan-400 hover:text-white cursor-pointer">
+              PAZYLOV
+            </h3>
             <p className="text-sm ml-4">
               © {new Date().getFullYear()} All rights reserved.
             </p>
