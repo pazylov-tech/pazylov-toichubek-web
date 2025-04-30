@@ -1,11 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Admin = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const [authenticated, setAuthenticated] = useState(false);
   const [input, setInput] = useState('');
 
   const handleLogin = () => {
-    if (input === 'Don770077C') {
+    if (input === '77') {
       setAuthenticated(true);
     } else {
       alert('Wrong password!');
@@ -14,7 +20,9 @@ const Admin = () => {
 
   if (!authenticated) {
     return (
-      <div className="h-screen flex items-center justify-center bg-[#0a192f] text-white px-4">
+      <div
+        className="h-screen flex items-center justify-center bg-[#0a192f] text-white px-4"
+        data-aos="fade-up">
         <div className="bg-[#112240] p-8 md:p-10 rounded-2xl shadow-2xl w-full max-w-sm animate-fade-in">
           <h2 className="text-2xl font-semibold text-center mb-6 tracking-wide">
             Admin Login
@@ -39,7 +47,9 @@ const Admin = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a192f] text-white p-10">
+    <div
+      className="min-h-screen bg-[#0a192f] text-white p-10"
+      data-aos="zoom-in">
       <h1 className="text-3xl font-bold mb-8 mt-10">My Site Dashboard</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
