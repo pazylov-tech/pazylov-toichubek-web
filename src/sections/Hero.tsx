@@ -5,6 +5,7 @@ import { FiMail, FiExternalLink } from 'react-icons/fi';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
 
 const Hero = () => {
   useEffect(() => {
@@ -28,28 +29,37 @@ const Hero = () => {
           </p>
 
           {/* Tech Stack Badges */}
-          <div className="flex gap-4 mt-7">
-            <span className="bg-gray-700 px-3 py-1 rounded-lg text-sm hover:bg-amber-800">
-              C, C#
-            </span>
-            <span className="bg-gray-700 px-3 py-1 rounded-lg text-sm hover:bg-amber-800">
-              Java, C++
-            </span>
-            <span className="bg-gray-700 px-3 py-1 rounded-lg text-sm hover:bg-amber-800">
-              JS, TS
-            </span>
-            <span className="bg-gray-700 px-3 py-1 rounded-lg text-sm hover:bg-amber-800">
-              Python, React
-            </span>
+          <div className="flex gap-4 mt-7 flex-wrap">
+            {['C, C#', 'Java, C++', 'JS, TS', 'Python, React'].map(
+              (tech, index) => (
+                <span
+                  key={index}
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 100}
+                  className="bg-gray-700 px-3 py-1 rounded-lg text-sm text-white transform transition-transform duration-300 hover:scale-110 hover:bg-red-500 shadow-md">
+                  {tech}
+                </span>
+              ),
+            )}
           </div>
 
           <div className="flex gap-7 mt-9">
-            <button className="bg-blue-500 px-11 py-4 text-lg rounded-md text-white flex items-center gap-2 hover:bg-blue-400">
+            <ScrollLink
+              to="portfolio"
+              smooth={true}
+              duration={370}
+              offset={-80}
+              className="bg-blue-500 px-11 py-4 text-lg rounded-md text-white flex items-center gap-2 hover:bg-blue-400 transition-all cursor-pointer">
               Projects <FiExternalLink />
-            </button>
-            <button className="bg-gray-800 px-11 py-4 text-lg rounded-md text-white flex items-center gap-2 hover:bg-gray-500">
+            </ScrollLink>
+            <ScrollLink
+              to="contact"
+              smooth={true}
+              duration={370}
+              offset={-80}
+              className="bg-gray-800 px-11 py-4 text-lg rounded-md text-white flex items-center gap-2 hover:bg-gray-500 transition-all cursor-pointer">
               Contact <FiMail />
-            </button>
+            </ScrollLink>
           </div>
 
           {/* Social Icons */}
@@ -69,7 +79,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="www.linkedin.com/in/toichubek-pazylov"
+              href="https://www.linkedin.com/in/toichubek-pazylov/"
               target="_blank"
               rel="noopener noreferrer">
               <FaLinkedin className="cursor-pointer hover:text-gray-400" />
