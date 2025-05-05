@@ -1,3 +1,4 @@
+import { Link as ScrollLink } from 'react-scroll';
 import {
   FaDownload,
   FaProjectDiagram,
@@ -51,11 +52,14 @@ const About = () => {
                 className="bg-red-500 hover:bg-red-600 text-white text-2xl px-4 py-3 rounded-lg flex items-center gap-2 shadow-md">
                 Download CV <FaDownload />
               </a>
-              <a
-                // href="#projects"
-                className="bg-gray-700 hover:bg-gray-600 text-white text-2xl px-4 py-3 rounded-lg flex items-center gap-3 shadow-md">
+              <ScrollLink
+                to="projects"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="bg-gray-700 hover:bg-gray-600 text-white text-2xl px-4 py-3 rounded-lg flex items-center gap-3 shadow-md cursor-pointer">
                 View Projects &lt;/&gt;
-              </a>
+              </ScrollLink>
             </div>
           </div>
 
@@ -72,8 +76,12 @@ const About = () => {
         {/* Stats */}
         <div className="grid md:grid-cols-3 gap-6 mt-16 start">
           {/* Projects */}
-          <div
-            className="bg-[#1e2a44] p-6 rounded-xl shadow-md hover:bg-gray-600"
+          <ScrollLink
+            to="projects"
+            smooth={true}
+            duration={500}
+            offset={-80}
+            className="bg-[#1e2a44] p-6 rounded-xl shadow-md hover:bg-gray-600 cursor-pointer"
             data-aos="zoom-in"
             data-aos-delay="100">
             <div className="flex items-center justify-between text-white text-3xl mb-3">
@@ -82,7 +90,7 @@ const About = () => {
             </div>
             <h4 className="text-xl font-semibold">TOTAL PROJECTS</h4>
             <p className="text-gray-400 text-sm mb-2">Variety of projects</p>
-          </div>
+          </ScrollLink>
 
           {/* Education */}
           <div
