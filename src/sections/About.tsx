@@ -76,12 +76,8 @@ const About = () => {
         {/* Stats */}
         <div className="grid md:grid-cols-3 gap-6 mt-16 start">
           {/* Projects */}
-          <ScrollLink
-            to="projects"
-            smooth={true}
-            duration={500}
-            offset={-80}
-            className="bg-[#1e2a44] p-6 rounded-xl shadow-md hover:bg-gray-600 cursor-pointer"
+          <div
+            className="bg-[#1e2a44] p-6 rounded-xl shadow-md hover:bg-gray-600 cursor-default"
             data-aos="zoom-in"
             data-aos-delay="100">
             <div className="flex items-center justify-between text-white text-3xl mb-3">
@@ -90,8 +86,7 @@ const About = () => {
             </div>
             <h4 className="text-xl font-semibold">TOTAL PROJECTS</h4>
             <p className="text-gray-400 text-sm mb-2">Variety of projects</p>
-          </ScrollLink>
-
+          </div>
           {/* Education */}
           <div
             className="bg-[#1e2a44] p-6 rounded-xl shadow-md hover:bg-gray-600"
@@ -104,7 +99,6 @@ const About = () => {
             <h4 className="text-xl font-semibold">EDUCATION</h4>
             <p className="text-gray-400 text-sm mb-2">Degree & Certificates</p>
           </div>
-
           {/* Experience */}
           <div
             className="bg-[#1e2a44] p-6 rounded-xl shadow-md hover:bg-gray-600"
