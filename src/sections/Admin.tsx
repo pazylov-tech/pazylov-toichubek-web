@@ -58,7 +58,7 @@ const Admin = () => {
       data-aos="zoom-in">
       <h1 className="text-3xl font-bold mb-8 mt-10">My Site Dashboard</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up">
         {/* Messages */}
         <div className="p-6 border border-gray-700 rounded-xl bg-[#112240] shadow-md animate-fade-in">
           <h2 className="text-xl font-semibold mb-4">Messages</h2>

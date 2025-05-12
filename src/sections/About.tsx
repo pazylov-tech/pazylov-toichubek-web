@@ -49,15 +49,16 @@ const About = () => {
               <a
                 href="/cv.pdf"
                 download
-                className="bg-red-500 hover:bg-red-600 text-white text-2xl px-4 py-3 rounded-lg flex items-center gap-2 shadow-md">
+                className="bg-red-500 hover:bg-red-600 text-white text-2xl px-4 py-3 rounded-lg flex items-center gap-2 shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-red-500/40">
                 Download CV <FaDownload />
               </a>
+
               <ScrollLink
                 to="projects"
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="bg-gray-700 hover:bg-gray-600 text-white text-2xl px-4 py-3 rounded-lg flex items-center gap-3 shadow-md cursor-pointer">
+                className="bg-gray-700 hover:bg-gray-600 text-white text-2xl px-4 py-3 rounded-lg flex items-center gap-3 shadow-md cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-gray-400/40">
                 View Projects &lt;/&gt;
               </ScrollLink>
             </div>
@@ -68,7 +69,7 @@ const About = () => {
             <img
               src="/profile.png"
               alt="Toichubek"
-              className="w-80 h-80 object-cover rounded-full border-2 border-gray-600 shadow-lg"
+              className="w-80 h-80 object-cover rounded-full border-2 border-gray-600 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-blue-500/30"
             />
           </div>
         </div>
@@ -77,7 +78,7 @@ const About = () => {
         <div className="grid md:grid-cols-3 gap-6 mt-16 start">
           {/* Projects */}
           <div
-            className="bg-[#1e2a44] p-6 rounded-xl shadow-md hover:bg-gray-600 cursor-default"
+            className="bg-[#1e2a44] p-6 rounded-xl shadow-md transform transition-all duration-300 hover:scale-105 hover:shadow-blue-500/30 hover:shadow-lg hover:bg-[#25314d] cursor-default"
             data-aos="zoom-in"
             data-aos-delay="100">
             <div className="flex items-center justify-between text-white text-3xl mb-3">
@@ -87,9 +88,10 @@ const About = () => {
             <h4 className="text-xl font-semibold">TOTAL PROJECTS</h4>
             <p className="text-gray-400 text-sm mb-2">Variety of projects</p>
           </div>
+
           {/* Education */}
           <div
-            className="bg-[#1e2a44] p-6 rounded-xl shadow-md hover:bg-gray-600"
+            className="bg-[#1e2a44] p-6 rounded-xl shadow-md transform transition-all duration-300 hover:scale-105 hover:shadow-blue-500/30 hover:shadow-lg hover:bg-[#25314d] cursor-default"
             data-aos="zoom-in"
             data-aos-delay="100">
             <div className="flex items-center justify-between text-white text-3xl mb-3">
@@ -99,9 +101,10 @@ const About = () => {
             <h4 className="text-xl font-semibold">EDUCATION</h4>
             <p className="text-gray-400 text-sm mb-2">Degree & Certificates</p>
           </div>
+
           {/* Experience */}
           <div
-            className="bg-[#1e2a44] p-6 rounded-xl shadow-md hover:bg-gray-600"
+            className="bg-[#1e2a44] p-6 rounded-xl shadow-md transform transition-all duration-300 hover:scale-105 hover:shadow-blue-500/30 hover:shadow-lg hover:bg-[#25314d] cursor-default"
             data-aos="zoom-in"
             data-aos-delay="100">
             <div className="flex items-center justify-between text-white text-3xl mb-3">
