@@ -3,12 +3,18 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Admin = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   const [authenticated, setAuthenticated] = useState(false);
   const [input, setInput] = useState('');
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+
+    if (authenticated) {
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+    }
+  }, [authenticated]);
 
   const handleLogin = () => {
     if (input === '77') {
@@ -48,19 +54,19 @@ const Admin = () => {
 
   return (
     <div
-      className="min-h-screen bg-[#0a192f] text-white p-10"
+      className="min-h-screen bg-[#0a192f] text-white p-10 animate-fade-in"
       data-aos="zoom-in">
       <h1 className="text-3xl font-bold mb-8 mt-10">My Site Dashboard</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Messages */}
-        <div className="p-6 border border-gray-700 rounded-xl bg-[#112240] shadow-md">
+        <div className="p-6 border border-gray-700 rounded-xl bg-[#112240] shadow-md animate-fade-in">
           <h2 className="text-xl font-semibold mb-4">Messages</h2>
           <p>No messages yet.</p>
         </div>
 
         {/* Project Offers */}
-        <div className="p-6 border border-gray-700 rounded-xl bg-[#112240] shadow-md">
+        <div className="p-6 border border-gray-700 rounded-xl bg-[#112240] shadow-md animate-fade-in">
           <h2 className="text-xl font-semibold mb-4">Project Offers</h2>
           <p>No offers yet.</p>
         </div>

@@ -10,7 +10,11 @@ const Projects = () => {
     Aos.init({ duration: 1500 });
   });
   return (
-    <section className="text-white py-8" id="projects" data-aos="fade-up">
+    <section
+      className="text-white py-8"
+      id="projects"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ml-90 gap-x-120 gap-y-5 place-items-center">
         {projectsItems.map((project, index) => (
           <Link
