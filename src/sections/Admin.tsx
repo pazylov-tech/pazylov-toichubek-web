@@ -5,6 +5,8 @@ import 'aos/dist/aos.css';
 const Admin = () => {
   const [authenticated, setAuthenticated] = useState(false);
   const [input, setInput] = useState('');
+  const [showMessages, setShowMessages] = useState(false);
+  const [showOffers, setShowOffers] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -61,14 +63,44 @@ const Admin = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up">
         {/* Messages */}
         <div className="p-6 border border-gray-700 rounded-xl bg-[#112240] shadow-md animate-fade-in">
-          <h2 className="text-xl font-semibold mb-4">Messages</h2>
-          <p>No messages yet.</p>
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-semibold">Messages</h2>
+            <button
+              onClick={() => setShowMessages((prev) => !prev)}
+              className="text-sm text-blue-400 hover:underline">
+              {showMessages ? 'Hide' : 'View'}
+            </button>
+          </div>
+          {showMessages ? (
+            <div className="space-y-2 transition-all duration-300">
+              <p className="text-gray-400">📩 No messages received yet.</p>
+              {/* Future: Map messages here */}
+            </div>
+          ) : (
+            <p className="text-gray-500 italic">
+              Click 'View' to see messages.
+            </p>
+          )}
         </div>
 
         {/* Project Offers */}
         <div className="p-6 border border-gray-700 rounded-xl bg-[#112240] shadow-md animate-fade-in">
-          <h2 className="text-xl font-semibold mb-4">Project Offers</h2>
-          <p>No offers yet.</p>
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-semibold">Project Offers</h2>
+            <button
+              onClick={() => setShowOffers((prev) => !prev)}
+              className="text-sm text-blue-400 hover:underline">
+              {showOffers ? 'Hide' : 'View'}
+            </button>
+          </div>
+          {showOffers ? (
+            <div className="space-y-2 transition-all duration-300">
+              <p className="text-gray-400">💼 No project offers yet.</p>
+              {/* Future: Map offers here */}
+            </div>
+          ) : (
+            <p className="text-gray-500 italic">Click 'View' to see offers.</p>
+          )}
         </div>
       </div>
     </div>

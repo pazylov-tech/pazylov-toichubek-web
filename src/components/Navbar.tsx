@@ -20,9 +20,17 @@ const Navbar = () => {
             alt="logo"
             className="h-10 w-10 hover:scale-110 transition-transform duration-300 cursor-pointer"
           />
-          <h1 className="text-2xl font-bold hover:text-blue-400 cursor-pointer">
-            PAZYLOV
-          </h1>
+          <Link
+            to="home"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-80}
+            activeClass="active">
+            <h1 className="text-2xl font-bold hover:text-blue-400 cursor-pointer">
+              PAZYLOV
+            </h1>
+          </Link>
         </div>
 
         <ul className="flex gap-9 text-lg">
