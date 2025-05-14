@@ -5,6 +5,7 @@ import {
   FaInstagram,
   FaEnvelope,
 } from 'react-icons/fa';
+import { Link } from 'react-scroll';
 
 export default function Footer() {
   return (
@@ -18,9 +19,17 @@ export default function Footer() {
               alt="logo"
               className="h-10 w-10 hover:scale-110 transition-transform duration-300 cursor-pointer"
             />
-            <h3 className="text-xl font-semibold text-cyan-400 hover:text-white cursor-pointer">
-              PAZYLOV
-            </h3>
+            <Link
+              to="home"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              activeClass="active">
+              <h3 className="text-xl font-semibold text-cyan-400 hover:text-white cursor-pointer">
+                PAZYLOV
+              </h3>
+            </Link>
             <p className="text-sm ml-4">
               © {new Date().getFullYear()} All rights reserved.
             </p>

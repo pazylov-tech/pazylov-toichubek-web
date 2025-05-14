@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -7,6 +8,7 @@ const Admin = () => {
   const [input, setInput] = useState('');
   const [showMessages, setShowMessages] = useState(false);
   const [showOffers, setShowOffers] = useState(false);
+  const navigate = useNavigate(); // ✅ initialize
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -24,6 +26,10 @@ const Admin = () => {
     } else {
       alert('Wrong password!');
     }
+  };
+
+  const handleExit = () => {
+    navigate('/');
   };
 
   if (!authenticated) {
@@ -58,7 +64,14 @@ const Admin = () => {
     <div
       className="min-h-screen bg-[#0a192f] text-white p-10 animate-fade-in"
       data-aos="zoom-in">
-      <h1 className="text-3xl font-bold mb-8 mt-10">My Site Dashboard</h1>
+      <div className="flex justify-between items-center mb-8 mt-10">
+        <h1 className="text-3xl font-bold">My Site Dashboard</h1>
+        <button
+          onClick={handleExit}
+          className="bg-red-500 hover:bg-red-700 text-white px-5 py-1 rounded-lg font-medium transition-colors">
+          Exit
+        </button>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up">
         {/* Messages */}
@@ -74,7 +87,6 @@ const Admin = () => {
           {showMessages ? (
             <div className="space-y-2 transition-all duration-300">
               <p className="text-gray-400">📩 No messages received yet.</p>
-              {/* Future: Map messages here */}
             </div>
           ) : (
             <p className="text-gray-500 italic">
@@ -96,7 +108,6 @@ const Admin = () => {
           {showOffers ? (
             <div className="space-y-2 transition-all duration-300">
               <p className="text-gray-400">💼 No project offers yet.</p>
-              {/* Future: Map offers here */}
             </div>
           ) : (
             <p className="text-gray-500 italic">Click 'View' to see offers.</p>
