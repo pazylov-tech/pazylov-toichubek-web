@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { projectsItems } from '../components/Portfolio/Projects/projectsItems.ts';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -9,6 +10,7 @@ const Admin = () => {
   const [showMessages, setShowMessages] = useState(false);
   const [showOffers, setShowOffers] = useState(false);
   const navigate = useNavigate(); // ✅ initialize
+  const [showProjects, setShowProjects] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -111,6 +113,70 @@ const Admin = () => {
             </div>
           ) : (
             <p className="text-gray-500 italic">Click 'View' to see offers.</p>
+          )}
+        </div>
+
+        {/* Projects */}
+        <div
+          className="p-6 border border-gray-700 rounded-xl bg-[#112240] shadow-md animate-fade-in"
+          data-aos="fade-up">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-semibold">Projects</h2>
+            <button
+              onClick={() => setShowProjects((prev) => !prev)}
+              className="text-sm text-blue-400 hover:underline">
+              {showProjects ? 'Hide' : 'View'}
+            </button>
+          </div>
+
+          {showProjects ? (
+            <div className="space-y-3 transition-all duration-300">
+              <div>
+                <h3 className="text-lg font-medium text-green-400 mb-2">
+                  ✅ Finished Projects
+                </h3>
+                {projectsItems
+                  .filter((p) => p.status === 'finished')
+                  .map((project) => (
+                    <div
+                      key={project.slug}
+                      className="text-gray-300 border-b border-gray-600 pb-2 mb-2">
+                      <p className="font-semibold">{project.title}</p>
+                      {project.liveDemoLink && (
+                        <a
+                          href={project.liveDemoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-blue-400 hover:underline">
+                          Visit Site
+                        </a>
+                      )}
+                    </div>
+                  ))}
+              </div>
+
+              <div>
+                <h3 className="text-lg font-medium text-yellow-400 mt-4 mb-2">
+                  🚧 In Development
+                </h3>
+                {projectsItems
+                  .filter((p) => p.status === 'in-development')
+                  .map((project) => (
+                    <div
+                      key={project.slug}
+                      className="text-gray-300 border-b border-gray-600 pb-2 mb-2">
+                      <p className="font-semibold">{project.title}</p>
+                      <span className="text-sm italic text-gray-400">
+                        Production stage
+                      </span>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          ) : (
+            <p className="text-gray-500 italic">
+              Click 'View' to see projects.
+            </p>
           )}
         </div>
       </div>
