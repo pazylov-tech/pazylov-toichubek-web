@@ -1,4 +1,5 @@
 import { Link, scrollSpy } from 'react-scroll';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
@@ -8,6 +9,9 @@ const Navbar = () => {
     Aos.init({ duration: 1000 });
     scrollSpy.update();
   }, []);
+
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   return (
     <nav
@@ -20,17 +24,24 @@ const Navbar = () => {
             alt="logo"
             className="h-10 w-10 hover:scale-110 transition-transform duration-300 cursor-pointer"
           />
-          <Link
-            to="home"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-80}
-            activeClass="active">
-            <h1 className="text-2xl font-bold hover:text-blue-400 cursor-pointer">
+
+          {isHomePage ? (
+            <Link
+              to="home"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              className="text-2xl font-bold hover:text-blue-400 cursor-pointer">
               PAZYLOV
-            </h1>
-          </Link>
+            </Link>
+          ) : (
+            <RouterLink to="/">
+              <h1 className="text-2xl font-bold hover:text-blue-400 cursor-pointer">
+                PAZYLOV
+              </h1>
+            </RouterLink>
+          )}
         </div>
 
         <ul className="flex gap-9 text-lg">

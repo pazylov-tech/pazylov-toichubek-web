@@ -23,7 +23,8 @@ const Admin = () => {
   }, [authenticated]);
 
   const handleLogin = () => {
-    if (input === '77') {
+    const password = '77';
+    if (input === password) {
       setAuthenticated(true);
     } else {
       alert('Wrong password!');
