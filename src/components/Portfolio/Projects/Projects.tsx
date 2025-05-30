@@ -24,7 +24,7 @@ const Projects = () => {
             <img
               src={project.image}
               alt={project.title}
-              className="rounded-t-2xl w-full h-52 object-cover"
+              className="rounded-t-2xl w-full h-50 object-cover"
             />
             <div className="p-4 text-center flex flex-col justify-between h-full pt-1">
               <h3 className="text-white text-lg font-semibold">
