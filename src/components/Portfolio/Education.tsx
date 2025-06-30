@@ -47,16 +47,34 @@ const Education: React.FC = () => {
   }, []);
 
   const [selected, setSelected] = useState<number | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
+  const [isOpening, setIsOpening] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // Close modal on outside click
+  const openModal = (index: number) => {
+    setSelected(index);
+    setIsOpening(true);
+    setTimeout(() => {
+      setIsOpening(false);
+    }, 150); // same duration as animation
+  };
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setSelected(null);
+      setIsClosing(false);
+    }, 250);
+  };
+
+  // Close on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         modalRef.current &&
         !modalRef.current.contains(event.target as Node)
       ) {
-        setSelected(null);
+        handleClose();
       }
     };
     if (selected !== null) {
@@ -75,7 +93,7 @@ const Education: React.FC = () => {
         {educationItems.map((item, index) => (
           <div
             key={index}
-            onClick={() => setSelected(index)}
+            onClick={() => openModal(index)}
             className="w-70 h-40 rounded-2xl shadow-md cursor-pointer hover:scale-105 transition duration-300 flex items-center justify-center">
             <img
               src={item.image}
@@ -88,12 +106,22 @@ const Education: React.FC = () => {
 
       {/* Modal */}
       {selected !== null && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm">
+        <div
+          className={`fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${
+            isClosing ? 'opacity-0' : 'opacity-100'
+          }`}>
           <div
             ref={modalRef}
-            className="bg-[#0a192f] text-white p-6 rounded-2xl shadow-2xl w-[90%] max-w-md relative">
+            className={`bg-[#0a192f] text-white p-6 rounded-2xl shadow-2xl w-[90%] max-w-md relative transform transition-all duration-300
+            ${
+              isOpening
+                ? 'scale-95 opacity-0 translate-y-2'
+                : isClosing
+                  ? 'scale-95 opacity-0 translate-y-2'
+                  : 'scale-100 opacity-100 translate-y-0'
+            }`}>
             <button
-              onClick={() => setSelected(null)}
+              onClick={handleClose}
               className="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl">
               &times;
             </button>
