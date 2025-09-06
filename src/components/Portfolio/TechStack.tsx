@@ -11,7 +11,8 @@ const techStack = [
   { name: 'Java', icon: '/tech-icons/java.svg' },
   { name: 'Node JS', icon: '/tech-icons/node.png' },
   { name: 'C++', icon: '/tech-icons/cpp.svg' },
-  { name: 'Python', icon: '/tech-icons/python.svg' },
+  // { name: 'Python', icon: '/tech-icons/python.svg' },
+  { name: 'Swift', icon: '/tech-icons/swift.svg' },
   { name: 'TypeScript', icon: '/tech-icons/ts.svg' },
 ];
 

@@ -30,7 +30,7 @@ const Hero = () => {
 
           {/* Tech Stack Badges */}
           <div className="flex gap-4 mt-7 flex-wrap">
-            {['C, C#', 'Java, C++', 'JS, TS', 'Python, React'].map(
+            {['C, C#', 'Java, C++', 'JS, TS', 'React, Swift'].map(
               (tech, index) => (
                 <span
                   key={index}
