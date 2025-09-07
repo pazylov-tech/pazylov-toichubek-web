@@ -9,9 +9,9 @@ interface GridContentProps {
 }
 
 const GridContent: React.FC<GridContentProps> = ({ type }) => {
+  if (type === 'projects') return <Projects />;
   if (type === 'tech') return <TechStack />;
   if (type === 'education') return <Education />;
-  if (type === 'projects') return <Projects />;
 
   return null;
 };

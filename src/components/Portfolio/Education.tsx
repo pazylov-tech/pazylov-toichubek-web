@@ -25,19 +25,19 @@ const educationItems = [
     name: 'Stepik',
     image: '/education-icons/stepik.jpg',
     description:
-      'Completed CS and problem-solving courses at Stepik to reinforce algorithmic thinking and backend basics.',
+      'Completed CS and problem-solving courses at Stepik to reinforce algorithmic thinking, backend basics and enhance web technologies.',
   },
   {
     name: 'Codeсademy',
     image: '/education-icons/codecademy.png',
     description:
-      'Learned web development foundations and backend intro through interactive lessons.',
+      'Gained foundations in web development and backend, and acquired mobile development experience with Swift for iOS.',
   },
   {
     name: 'Coursera',
     image: '/education-icons/coursera.png',
     description:
-      'Took university-level CS courses in Python, software architecture, and intro to AI.',
+      'Took university-level CS courses in Data Science, software architecture, and intro to AI.',
   },
 ];
 
