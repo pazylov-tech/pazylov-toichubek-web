@@ -5,7 +5,7 @@ export const projectsItems = [
     image: '/projects-icons/pazylov.png',
     description:
       'My personal website and first pet project. Built with TypeScript, React, Vite and TailwindCSS.',
-    liveDemoLink: 'https://toichubek.com',
+    liveDemoLink: 'https://pazylov.netlify.app/',
     githubLink: 'https://github.com/pazylov-tech/pazylov-toichubek-web',
     status: 'finished',
     details:
@@ -24,7 +24,7 @@ export const projectsItems = [
     image: '/projects-icons/solo.png',
     description: 'An anime-based concept app inspired by Solo Leveling.',
     liveDemoLink: '#',
-    githubLink: '#',
+    githubLink: 'https://github.com/pazylov-tech/Solo',
     status: 'in-development',
     details:
       'SOLO is a concept web app inspired by the anime "Solo Leveling". Overall, it will recreate the system by which Song Jin Woo became the strongest, but adapted to real life though. Call it to-do, fitness, progress tracker app or whatever, it will be all and more. The goal was to practice component-based UI design, animation, and theming in a creative, fun project setting.',

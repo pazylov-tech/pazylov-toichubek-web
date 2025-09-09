@@ -25,7 +25,7 @@ const Portfolio = () => {
       <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} />
 
       <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ml-97"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ml-25"
         data-aos="zoom-out">
         <GridContent type={activeTab} />
       </div>
