@@ -7,14 +7,13 @@ import 'aos/dist/aos.css';
 const Admin = () => {
   const [authenticated, setAuthenticated] = useState(false);
   const [input, setInput] = useState('');
-  const [showMessages, setShowMessages] = useState(false);
-  const [showOffers, setShowOffers] = useState(false);
-  const navigate = useNavigate(); // ✅ initialize
-  const [showProjects, setShowProjects] = useState(false);
+  const [showMessages, setShowMessages] = useState(true);
+  const [showOffers, setShowOffers] = useState(true);
+  const [showProjects, setShowProjects] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
-
     if (authenticated) {
       setTimeout(() => {
         AOS.refresh();
@@ -87,14 +86,10 @@ const Admin = () => {
               {showMessages ? 'Hide' : 'View'}
             </button>
           </div>
-          {showMessages ? (
+          {showMessages && (
             <div className="space-y-2 transition-all duration-300">
               <p className="text-gray-400">📩 No messages received yet.</p>
             </div>
-          ) : (
-            <p className="text-gray-500 italic">
-              Click 'View' to see messages.
-            </p>
           )}
         </div>
 
@@ -108,12 +103,10 @@ const Admin = () => {
               {showOffers ? 'Hide' : 'View'}
             </button>
           </div>
-          {showOffers ? (
+          {showOffers && (
             <div className="space-y-2 transition-all duration-300">
               <p className="text-gray-400">💼 No project offers yet.</p>
             </div>
-          ) : (
-            <p className="text-gray-500 italic">Click 'View' to see offers.</p>
           )}
         </div>
 
@@ -130,7 +123,7 @@ const Admin = () => {
             </button>
           </div>
 
-          {showProjects ? (
+          {showProjects && (
             <div className="space-y-3 transition-all duration-300">
               <div>
                 <h3 className="text-lg font-medium text-green-400 mb-2">
@@ -174,10 +167,6 @@ const Admin = () => {
                   ))}
               </div>
             </div>
-          ) : (
-            <p className="text-gray-500 italic">
-              Click 'View' to see projects.
-            </p>
           )}
         </div>
       </div>

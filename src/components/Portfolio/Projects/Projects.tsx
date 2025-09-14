@@ -33,7 +33,7 @@ const Projects = () => {
               <p className="text-gray-400 text-sm mb-1 line-clamp-1">
                 {project.description}
               </p>
-              <div className="flex justify-center gap-4 text-sm">
+              <div className="flex justify-center gap-25 text-sm">
                 {project.liveDemoLink && (
                   <a
                     href={project.liveDemoLink}
