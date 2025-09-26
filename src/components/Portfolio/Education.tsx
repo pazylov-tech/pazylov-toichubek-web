@@ -85,6 +85,21 @@ const Education: React.FC = () => {
     };
   }, [selected]);
 
+  // Close on ESC key
+  useEffect(() => {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        handleClose();
+      }
+    };
+    if (selected !== null) {
+      document.addEventListener('keydown', handleEsc);
+    }
+    return () => {
+      document.removeEventListener('keydown', handleEsc);
+    };
+  }, [selected]);
+
   return (
     <>
       <div
@@ -107,19 +122,20 @@ const Education: React.FC = () => {
       {/* Modal */}
       {selected !== null && (
         <div
-          className={`fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${
+          className={`fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
             isClosing ? 'opacity-0' : 'opacity-100'
           }`}>
           <div
             ref={modalRef}
-            className={`bg-[#0a192f] text-white p-6 rounded-2xl shadow-2xl w-[90%] max-w-md relative transform transition-all duration-300
-            ${
-              isOpening
-                ? 'scale-95 opacity-0 translate-y-2'
-                : isClosing
-                  ? 'scale-95 opacity-0 translate-y-2'
-                  : 'scale-100 opacity-100 translate-y-0'
-            }`}>
+            className={`bg-[#0a192f] text-white p-6 rounded-2xl shadow-2xl w-[90%] max-w-md
+        transform transition-all duration-300
+        ${
+          isOpening
+            ? 'scale-95 opacity-0 translate-y-2'
+            : isClosing
+              ? 'scale-95 opacity-0 translate-y-2'
+              : 'scale-100 opacity-100 translate-y-0'
+        }`}>
             <button
               onClick={handleClose}
               className="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl">
