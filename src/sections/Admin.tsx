@@ -10,6 +10,13 @@ const Admin = () => {
   const [showMessages, setShowMessages] = useState(true);
   const [showOffers, setShowOffers] = useState(true);
   const [showProjects, setShowProjects] = useState(true);
+  const [showChangePassword, setShowChangePassword] = useState(false);
+
+  // password management
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,9 +28,14 @@ const Admin = () => {
     }
   }, [authenticated]);
 
+  // Load stored password or fallback to default
+  const getStoredPassword = () => {
+    return localStorage.getItem('adminPassword') || '77';
+  };
+
   const handleLogin = () => {
-    const password = '77';
-    if (input === password) {
+    const storedPassword = getStoredPassword();
+    if (input === storedPassword) {
       setAuthenticated(true);
     } else {
       alert('Wrong password!');
@@ -32,6 +44,34 @@ const Admin = () => {
 
   const handleExit = () => {
     navigate('/');
+  };
+
+  const handleChangePassword = () => {
+    const storedPassword = getStoredPassword();
+
+    if (currentPassword !== storedPassword) {
+      alert('Current password is incorrect!');
+      return;
+    }
+
+    if (newPassword.length < 3) {
+      alert('New password must be at least 3 characters long.');
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      alert('New password and confirmation do not match.');
+      return;
+    }
+
+    localStorage.setItem('adminPassword', newPassword);
+    alert('Password changed successfully!');
+
+    // reset fields
+    setCurrentPassword('');
+    setNewPassword('');
+    setConfirmPassword('');
+    setShowChangePassword(false); // collapse after success
   };
 
   if (!authenticated) {
@@ -166,6 +206,49 @@ const Admin = () => {
                     </div>
                   ))}
               </div>
+            </div>
+          )}
+        </div>
+
+        {/* Change Password */}
+        <div className="p-6 border border-gray-700 rounded-xl bg-[#112240] shadow-md animate-fade-in">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-semibold">Change Password</h2>
+            <button
+              onClick={() => setShowChangePassword((prev) => !prev)}
+              className="text-sm text-blue-400 hover:underline">
+              {showChangePassword ? 'Hide' : 'Update'}
+            </button>
+          </div>
+
+          {showChangePassword && (
+            <div className="space-y-3 transition-all duration-300">
+              <input
+                type="password"
+                placeholder="Current password"
+                value={currentPassword}
+                onChange={(e) => setCurrentPassword(e.target.value)}
+                className="w-full px-3 py-2 rounded-lg bg-[#0a192f] border border-[#233554] focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="password"
+                placeholder="New password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                className="w-full px-3 py-2 rounded-lg bg-[#0a192f] border border-[#233554] focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="password"
+                placeholder="Confirm new password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="w-full px-3 py-2 rounded-lg bg-[#0a192f] border border-[#233554] focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                onClick={handleChangePassword}
+                className="w-full py-2 rounded-lg bg-blue-600 hover:bg-blue-700 active:bg-blue-800 transition-colors font-medium">
+                Update Password
+              </button>
             </div>
           )}
         </div>
