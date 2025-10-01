@@ -213,11 +213,11 @@ const Admin = () => {
         {/* Change Password */}
         <div className="p-6 border border-gray-700 rounded-xl bg-[#112240] shadow-md animate-fade-in">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-semibold">Change Password</h2>
+            <h2 className="text-xl font-semibold">Password</h2>
             <button
               onClick={() => setShowChangePassword((prev) => !prev)}
               className="text-sm text-blue-400 hover:underline">
-              {showChangePassword ? 'Hide' : 'Update'}
+              {showChangePassword ? 'Hide' : 'View'}
             </button>
           </div>
 
@@ -248,6 +248,19 @@ const Admin = () => {
                 onClick={handleChangePassword}
                 className="w-full py-2 rounded-lg bg-blue-600 hover:bg-blue-700 active:bg-blue-800 transition-colors font-medium">
                 Update Password
+              </button>
+
+              {/* Reset Button */}
+              <button
+                onClick={() => {
+                  localStorage.setItem('adminPassword', '77');
+                  alert('Password has been reset to default (77).');
+                  setCurrentPassword('');
+                  setNewPassword('');
+                  setConfirmPassword('');
+                }}
+                className="w-full py-2 rounded-lg bg-red-600 hover:bg-red-700 active:bg-red-800 transition-colors font-medium mt-2">
+                Reset to Default
               </button>
             </div>
           )}
