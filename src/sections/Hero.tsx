@@ -30,17 +30,15 @@ const Hero = () => {
 
           {/* Tech Stack Badges */}
           <div className="flex gap-4 mt-7 flex-wrap">
-            {['C, C#', 'Java, C++', 'JS, TS', 'React, Swift'].map(
-              (tech, index) => (
-                <span
-                  key={index}
-                  data-aos="zoom-in"
-                  data-aos-delay={index * 100}
-                  className="bg-gray-700 px-3 py-1 rounded-lg text-sm text-white transform transition-transform duration-300 hover:scale-110 hover:bg-red-500 shadow-md">
-                  {tech}
-                </span>
-              ),
-            )}
+            {['C, C#', 'Java, C++', 'JS, TS', 'Swift'].map((tech, index) => (
+              <span
+                key={index}
+                data-aos="zoom-in"
+                data-aos-delay={index * 100}
+                className="bg-gray-700 px-3 py-1 rounded-lg text-sm text-white transform transition-transform duration-300 hover:scale-110 hover:bg-red-500 shadow-md">
+                {tech}
+              </span>
+            ))}
           </div>
 
           <div className="flex gap-7 mt-9">
