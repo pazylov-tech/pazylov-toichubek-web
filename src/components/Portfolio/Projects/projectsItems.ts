@@ -19,6 +19,25 @@ export const projectsItems = [
     ],
   },
   {
+    title: 'AUCA Connect',
+    slug: 'auca-connect',
+    image: '/projects-icons/auca-connect.png',
+    description:
+      'An app for the university & And my possible senior thesis project.',
+    liveDemoLink: '#',
+    githubLink: '#',
+    status: 'in-development',
+    details:
+      'AUCA Connect aims to be a unified platform for AUCA students, faculty, and staff to interact, access resources, and stay informed. It will consist of all the AUCA booking equipment such as shuttle bus / rooms / ch and more. This may serve as my senior thesis, focusing on both user experience and backend integration. It’s in early development with strong potential for real-world deployment.',
+    features: [
+      'Centralized platform for students, faculty, and staff at AUCA.',
+      'Booking features for shuttles, rooms, and other university services.',
+      'Potential senior thesis project with real-world impact.',
+      'Focus on UX design and system integration.',
+      'Scalable architecture prepared for broader deployment.',
+    ],
+  },
+  {
     title: 'SOLO',
     slug: 'solo',
     image: '/projects-icons/solo.png',
@@ -53,25 +72,6 @@ export const projectsItems = [
       'Modern, cozy UI tailored for a book-loving community.',
       'Focus on frontend architecture for social web apps.',
       'Personalized user experience through reading preferences.',
-    ],
-  },
-  {
-    title: 'AUCA Connect',
-    slug: 'auca-connect',
-    image: '/projects-icons/auca-connect.png',
-    description:
-      'An app for the university & And my possible senior thesis project.',
-    liveDemoLink: '#',
-    githubLink: '#',
-    status: 'in-development',
-    details:
-      'AUCA Connect aims to be a unified platform for AUCA students, faculty, and staff to interact, access resources, and stay informed. It will consist of all the AUCA booking equipment such as shuttle bus / rooms / ch and more. This may serve as my senior thesis, focusing on both user experience and backend integration. It’s in early development with strong potential for real-world deployment.',
-    features: [
-      'Centralized platform for students, faculty, and staff at AUCA.',
-      'Booking features for shuttles, rooms, and other university services.',
-      'Potential senior thesis project with real-world impact.',
-      'Focus on UX design and system integration.',
-      'Scalable architecture prepared for broader deployment.',
     ],
   },
   {
